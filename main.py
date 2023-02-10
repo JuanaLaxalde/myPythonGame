@@ -74,6 +74,17 @@ class CreateBoard:
         print(self.line_9)
         return "LET'S GET STARTED!"
 
+    def modify_board(self, letter, name):
+        if letter == 'B':
+            self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1, I1=self.i1,
+                                                                                            N1=self.n1, G1=self.g1,
+                                                                                            O1=self.o1)
+            self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2,
+                                                                                            N2=self.n2, G2=self.g2,
+                                                                                            O2=self.o2)
+            self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
+                                                                                            N3=self.n3, G3=self.g3,
+                                                                                            O3=self.o3)
 
 def bingo_ball():
     faeries = ["Faer", "Dasy", "Qige", "Ezen", "Lena", "Yani", "Bezo"]

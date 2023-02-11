@@ -144,6 +144,8 @@ if roll == 'ROLL':
     print("""HERE IS YOUR FIRST BALL
     """ + new_ball)
 
+def trying_out_changes:
+    pass
 
 
 

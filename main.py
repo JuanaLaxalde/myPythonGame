@@ -78,57 +78,134 @@ class Board:
         print(self.line_7)
         print(self.line_8)
         print(self.line_9)
-        return "LET'S GET STARTED!"
+        return " "
 
     def __set__(self, letter, name):
         if letter == 'B':
             if self.b1 == name:
-                self.b1 = '---'
+                self.b1_new = '---'
+                self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1_new, I1=self.i1,
+                                                                                                N1=self.n1, G1=self.g1,
+                                                                                                O1=self.o1)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.b2 == name:
-                self.b2 = '---'
+                self.b2_new = '---'
+                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2_new, I2=self.i2,
+                                                                                                N2=self.n2, G2=self.g2,
+                                                                                                O2=self.o2)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.b3 == name:
-                self.b3 = '---'
-            print("YOU GOT IT! Here's your updated board:")
-            print(new_board)
+                self.b3_new = '---'
+                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3_new, I3=self.i3,
+                                                                                                N3=self.n3, G3=self.g3,
+                                                                                                O3=self.o3)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
 
         elif letter == 'I':
             if self.i1 == name:
-                self.i1 = '---'
+                self.i1_new = '---'
+                self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1,
+                                                                                                I1=self.i1_new,
+                                                                                                N1=self.n1, G1=self.g1,
+                                                                                                O1=self.o1)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.i2 == name:
-                self.i2 = '---'
+                self.i2_new = '---'
+                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2_new,
+                                                                                                N2=self.n2, G2=self.g2,
+                                                                                                O2=self.o2)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.i3 == name:
-                self.i3 = '---'
-            print("YOU GOT IT! Here's your updated board:")
-            print(new_board)
+                self.i3_new = '---'
+                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3_new,
+                                                                                                N3=self.n3, G3=self.g3,
+                                                                                                O3=self.o3)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
 
         elif letter == 'N':
             if self.n1 == name:
-                self.n1 = '---'
+                self.n1_new = '---'
+                self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1,
+                                                                                                I1=self.i1,
+                                                                                                N1=self.n1_new, G1=self.g1,
+                                                                                                O1=self.o1)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.n2 == name:
-                self.n2 = '---'
+                self.n2_new = '---'
+                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2,
+                                                                                                N2=self.n2_new, G2=self.g2,
+                                                                                                O2=self.o2)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.n3 == name:
-                self.n3 = '---'
-            print("YOU GOT IT! Here's your updated board:")
-            print(new_board)
+                self.n3_new = '---'
+                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
+                                                                                                N3=self.n3_new, G3=self.g3,
+                                                                                                O3=self.o3)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
 
         elif letter == 'G':
             if self.g1 == name:
-                self.g1 = '---'
+                self.g1_new = '---'
+                self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1,
+                                                                                                I1=self.i1,
+                                                                                                N1=self.n1,
+                                                                                                G1=self.g1_new,
+                                                                                                O1=self.o1)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.g2 == name:
-                self.g2 = '---'
+                self.g2_new = '---'
+                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2,
+                                                                                                N2=self.n2,
+                                                                                                G2=self.g2_new,
+                                                                                                O2=self.o2)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.g3 == name:
-                self.g3 = '---'
-            print("YOU GOT IT! Here's your updated board:")
-            print(new_board)
+                self.g3_new = '---'
+                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
+                                                                                                N3=self.n3, G3=self.g3_new,
+                                                                                                O3=self.o3)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
 
         elif letter == 'O':
             if self.o1 == name:
-                self.o1 = '---'
+                self.o1_new = '---'
+                self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1,
+                                                                                                I1=self.i1,
+                                                                                                N1=self.n1,
+                                                                                                G1=self.g1,
+                                                                                                O1=self.o1_new)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.o2 == name:
-                self.o2 = '---'
+                self.o2_new = '---'
+                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2,
+                                                                                                N2=self.n2,
+                                                                                                G2=self.g2,
+                                                                                                O2=self.o2_new)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
             elif self.o3 == name:
-                self.o3 = '---'
+                self.o3_new = '---'
+                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
+                                                                                                N3=self.n3, G3=self.g3,
+                                                                                                O3=self.o3_new)
+                print("YOU GOT IT! Here's your updated board:")
+                print(new_board)
 
+        else:
+            print("No luck, try again")
 
 
 class NewBall():
@@ -136,13 +213,11 @@ class NewBall():
     letters = ["B", "I", "N", "G", "O"]
 
     def __init__(self):
-        self.name = self.faeries[random.randint(0, 6)]
-        self.letter = self.letters[random.randint(0, 4)]
+        self.name = random.choice(self.faeries)
+        self.letter = random.choice(self.letters)
 
     def __repr__(self):
-        return "Your new ball is: " + self.letter + self.letter
-
-
+        return "Your new ball is: " + self.letter + " " + self.name
 
 
 # def check_ball(bingo_ball, board):
@@ -196,6 +271,7 @@ play = input()
 while play == 'ROLL':
     new_ball = NewBall()
     print(new_ball)
+    new_board.__set__(new_ball.letter, new_ball.name)
     print("Type 'ROLL' to get another Faery Ball:")
     play = input()
 

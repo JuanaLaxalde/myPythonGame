@@ -28,41 +28,47 @@ characters = {1: "Faer", 2: "Yani", 3: "Bezo", 4: "Dasy", 5: "Lena",
               6: "Qige", 7: "Ezen"}
 
 
-class CreateBoard:
+class Board:
     # Generate Random Placements
     def __init__(self):
-        self.b1 = characters.get(random.randint(1, 7))
-        self.b2 = characters.get(random.randint(1, 7))
-        self.b3 = characters.get(random.randint(1, 7))
+        self.b1 = random.choice(list(characters.values()))
+        self.b2 = random.choice(list(characters.values()))
+        self.b3 = random.choice(list(characters.values()))
 
-        self.i1 = characters.get(random.randint(1, 7))
-        self.i2 = characters.get(random.randint(1, 7))
-        self.i3 = characters.get(random.randint(1, 7))
+        self.i1 = random.choice(list(characters.values()))
+        self.i2 = random.choice(list(characters.values()))
+        self.i3 = random.choice(list(characters.values()))
 
-        self.n1 = characters.get(random.randint(1, 7))
-        self.n2 = characters.get(random.randint(1, 7))
-        self.n3 = characters.get(random.randint(1, 7))
+        self.n1 = random.choice(list(characters.values()))
+        self.n2 = random.choice(list(characters.values()))
+        self.n3 = random.choice(list(characters.values()))
 
-        self.g1 = characters.get(random.randint(1, 7))
-        self.g2 = characters.get(random.randint(1, 7))
-        self.g3 = characters.get(random.randint(1, 7))
+        self.g1 = random.choice(list(characters.values()))
+        self.g2 = random.choice(list(characters.values()))
+        self.g3 = random.choice(list(characters.values()))
 
-        self.o1 = characters.get(random.randint(1, 7))
-        self.o2 = characters.get(random.randint(1, 7))
-        self.o3 = characters.get(random.randint(1, 7))
+        self.o1 = random.choice(list(characters.values()))
+        self.o2 = random.choice(list(characters.values()))
+        self.o3 = random.choice(list(characters.values()))
 
         # Format Bingo Table
         self.line_1 = "*----------*----------*----------*----------*----------*"
         self.line_2 = "*    B     *    I     *    N     *    G     *    O     *"
         self.line_3 = "*----------*----------*----------*----------*----------*"
-        self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1, I1=self.i1, N1=self.n1, G1=self.g1, O1=self.o1)
+        self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1, I1=self.i1,
+                                                                                        N1=self.n1, G1=self.g1,
+                                                                                        O1=self.o1)
         self.line_5 = "*----------*----------*----------*----------*----------*"
-        self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2, N2=self.n2, G2=self.g2, O2=self.o2)
+        self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2,
+                                                                                        N2=self.n2, G2=self.g2,
+                                                                                        O2=self.o2)
         self.line_7 = "*----------*----------*----------*----------*----------*"
-        self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3, N3=self.n3, G3=self.g3, O3=self.o3)
+        self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
+                                                                                        N3=self.n3, G3=self.g3,
+                                                                                        O3=self.o3)
         self.line_9 = "*----------*----------*----------*----------*----------*"
 
-    def get_board(self):
+    def __repr__(self):
         print(self.line_1)
         print(self.line_2)
         print(self.line_3)
@@ -74,24 +80,72 @@ class CreateBoard:
         print(self.line_9)
         return "LET'S GET STARTED!"
 
-    def modify_board(self, letter, name):
+    def __set__(self, letter, name):
         if letter == 'B':
-            self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1, I1=self.i1,
-                                                                                            N1=self.n1, G1=self.g1,
-                                                                                            O1=self.o1)
-            self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2,
-                                                                                            N2=self.n2, G2=self.g2,
-                                                                                            O2=self.o2)
-            self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
-                                                                                            N3=self.n3, G3=self.g3,
-                                                                                            O3=self.o3)
+            if self.b1 == name:
+                self.b1 = '---'
+            elif self.b2 == name:
+                self.b2 = '---'
+            elif self.b3 == name:
+                self.b3 = '---'
+            print("YOU GOT IT! Here's your updated board:")
+            print(new_board)
 
-def bingo_ball():
+        elif letter == 'I':
+            if self.i1 == name:
+                self.i1 = '---'
+            elif self.i2 == name:
+                self.i2 = '---'
+            elif self.i3 == name:
+                self.i3 = '---'
+            print("YOU GOT IT! Here's your updated board:")
+            print(new_board)
+
+        elif letter == 'N':
+            if self.n1 == name:
+                self.n1 = '---'
+            elif self.n2 == name:
+                self.n2 = '---'
+            elif self.n3 == name:
+                self.n3 = '---'
+            print("YOU GOT IT! Here's your updated board:")
+            print(new_board)
+
+        elif letter == 'G':
+            if self.g1 == name:
+                self.g1 = '---'
+            elif self.g2 == name:
+                self.g2 = '---'
+            elif self.g3 == name:
+                self.g3 = '---'
+            print("YOU GOT IT! Here's your updated board:")
+            print(new_board)
+
+        elif letter == 'O':
+            if self.o1 == name:
+                self.o1 = '---'
+            elif self.o2 == name:
+                self.o2 = '---'
+            elif self.o3 == name:
+                self.o3 = '---'
+
+
+
+class NewBall():
     faeries = ["Faer", "Dasy", "Qige", "Ezen", "Lena", "Yani", "Bezo"]
     letters = ["B", "I", "N", "G", "O"]
-    name = faeries[random.randint(0, 6)]
-    letter = letters[random.randint(0, 4)]
-    return "Faery: " + name + " In placement: " + letter
+
+    def __init__(self):
+        self.name = self.faeries[random.randint(0, 6)]
+        self.letter = self.letters[random.randint(0, 4)]
+
+    def __repr__(self):
+        return "Your new ball is: " + self.letter + self.letter
+
+
+
+
+# def check_ball(bingo_ball, board):
 
 
 # STEP 2 - Create interaction with player
@@ -132,18 +186,17 @@ elif answer == 'Y':
 Yiiihhhi, let's get started with the Faery Bingo
     
 HERE IS YOUR BRAND NEW BINGO BOARD: """)
-    new_board = CreateBoard()
-    new_board.get_board()
-#4
+    new_board = Board()
+    print(new_board)
+# 4
 print("""
 Whenever you're ready, type 'ROLL' to get a Faery Ball and start completing your table""")
-roll = input()
+play = input()
 
-if roll == 'ROLL':
-    new_ball = bingo_ball()
-    print("""HERE IS YOUR FIRST BALL
-    """ + new_ball)
+while play == 'ROLL':
+    new_ball = NewBall()
+    print(new_ball)
+    print("Type 'ROLL' to get another Faery Ball:")
+    play = input()
 
-
-
-
+print("out of loop")

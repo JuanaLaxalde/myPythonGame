@@ -9,6 +9,7 @@
 # Faer; Dasy; Qige; Ezen; Lena; Yani; Bezo
 
 import random
+import time
 
 # STEP 1 - Setting up functions and format
 
@@ -84,21 +85,24 @@ class Board:
         if letter == 'B':
             if self.b1 == name:
                 self.b1_new = '---'
-                self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1_new, I1=self.i1,
+                self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1_new,
+                                                                                                I1=self.i1,
                                                                                                 N1=self.n1, G1=self.g1,
                                                                                                 O1=self.o1)
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
             elif self.b2 == name:
                 self.b2_new = '---'
-                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2_new, I2=self.i2,
+                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2_new,
+                                                                                                I2=self.i2,
                                                                                                 N2=self.n2, G2=self.g2,
                                                                                                 O2=self.o2)
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
             elif self.b3 == name:
                 self.b3_new = '---'
-                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3_new, I3=self.i3,
+                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3_new,
+                                                                                                I3=self.i3,
                                                                                                 N3=self.n3, G3=self.g3,
                                                                                                 O3=self.o3)
                 print("YOU GOT IT! Here's your updated board:")
@@ -115,14 +119,16 @@ class Board:
                 print(new_board)
             elif self.i2 == name:
                 self.i2_new = '---'
-                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2_new,
+                self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2,
+                                                                                                I2=self.i2_new,
                                                                                                 N2=self.n2, G2=self.g2,
                                                                                                 O2=self.o2)
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
             elif self.i3 == name:
                 self.i3_new = '---'
-                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3_new,
+                self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3,
+                                                                                                I3=self.i3_new,
                                                                                                 N3=self.n3, G3=self.g3,
                                                                                                 O3=self.o3)
                 print("YOU GOT IT! Here's your updated board:")
@@ -133,21 +139,24 @@ class Board:
                 self.n1_new = '---'
                 self.line_4 = "*   {B1}   *   {I1}   *   {N1}   *   {G1}   *   {O1}   *".format(B1=self.b1,
                                                                                                 I1=self.i1,
-                                                                                                N1=self.n1_new, G1=self.g1,
+                                                                                                N1=self.n1_new,
+                                                                                                G1=self.g1,
                                                                                                 O1=self.o1)
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
             elif self.n2 == name:
                 self.n2_new = '---'
                 self.line_6 = "*   {B2}   *   {I2}   *   {N2}   *   {G2}   *   {O2}   *".format(B2=self.b2, I2=self.i2,
-                                                                                                N2=self.n2_new, G2=self.g2,
+                                                                                                N2=self.n2_new,
+                                                                                                G2=self.g2,
                                                                                                 O2=self.o2)
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
             elif self.n3 == name:
                 self.n3_new = '---'
                 self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
-                                                                                                N3=self.n3_new, G3=self.g3,
+                                                                                                N3=self.n3_new,
+                                                                                                G3=self.g3,
                                                                                                 O3=self.o3)
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
@@ -173,7 +182,8 @@ class Board:
             elif self.g3 == name:
                 self.g3_new = '---'
                 self.line_8 = "*   {B3}   *   {I3}   *   {N3}   *   {G3}   *   {O3}   *".format(B3=self.b3, I3=self.i3,
-                                                                                                N3=self.n3, G3=self.g3_new,
+                                                                                                N3=self.n3,
+                                                                                                G3=self.g3_new,
                                                                                                 O3=self.o3)
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
@@ -204,9 +214,6 @@ class Board:
                 print("YOU GOT IT! Here's your updated board:")
                 print(new_board)
 
-        else:
-            print("No luck, try again")
-
 
 class NewBall():
     faeries = ["Faer", "Dasy", "Qige", "Ezen", "Lena", "Yani", "Bezo"]
@@ -218,9 +225,6 @@ class NewBall():
 
     def __repr__(self):
         return "Your new ball is: " + self.letter + " " + self.name
-
-
-# def check_ball(bingo_ball, board):
 
 
 # STEP 2 - Create interaction with player
@@ -247,32 +251,30 @@ WELCOME TO THE FANTASTIC FAERY BINGO
 print("Please enter your desired USERNAME:")
 username = input()
 # 2
-print("Hello " + username + "! Are you ready to start playing?")
-print("Enter 'Y' for yes or 'N' for no")
-answer = input()
+print("Hello " + username + "! We are creating your own personal bingo board")
+time.sleep(3)
+
 # 3
-if answer != 'Y' and answer != 'N':
-    print("That is not a correct answer, please enter 'Y' for yes or 'N' for no")
-    answer = input()
-elif answer == 'N':
-    print("Well then... see you another time :(")
-elif answer == 'Y':
-    print("""
-Yiiihhhi, let's get started with the Faery Bingo
+print("""
+Let's get started with the Faery Bingo
     
 HERE IS YOUR BRAND NEW BINGO BOARD: """)
-    new_board = Board()
-    print(new_board)
+new_board = Board()
+print(new_board)
 # 4
 print("""
 Whenever you're ready, type 'ROLL' to get a Faery Ball and start completing your table""")
 play = input()
 
+count = 0
 while play == 'ROLL':
     new_ball = NewBall()
     print(new_ball)
     new_board.__set__(new_ball.letter, new_ball.name)
     print("Type 'ROLL' to get another Faery Ball:")
     play = input()
+    count += 1
 
+print(new_board)
+print("It took you", count, "guesses to win the game")
 print("out of loop")

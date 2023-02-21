@@ -151,7 +151,7 @@ class NewBall():
         return "Your new ball is: " + self.letter + " " + self.name
 
 
-# Create prize-calculator
+# Create guesses calculator
 def calculate_guesses(dict):
     guessed = 0
     for i in dict.values():
@@ -159,6 +159,85 @@ def calculate_guesses(dict):
             if j == '----':
                 guessed += 1
     return guessed
+
+
+# Create prize assignator
+def assign_prize(guesses):
+    one_to_five = """
+.'.         .'.
+|  \       /  |
+'.  \  |  /  .'
+  '. \\|// .'
+    '-- --'
+    .'/|\'.^~DLF
+   '..'|'..'
+    """
+    six_to_ten = """
+   /\  ,
+  {Oo\{o\    .=.
+  {o: \:.\  /   \\
+ {O:'  \:.-'_.-\_)____
+  {o:.  /`~('-./-----.\\
+   }o: // /|         `/\\
+  {O:'// /-'         /\/\\
+  }o-/( <___    \\'/ /\/\/\\
+ /o./  ;--._)====* -\/\/\/
+ `"`\  \        /.\  `""`
+     \  \\
+      \  \\
+jgs   /`\ )
+      |/| |
+    _//  \|
+   | /   ||
+   |/   / |
+        `\|
+          '
+    """
+    eleven_to_fifteen = """
+                                               .'  .
+                                             .'  ;'.
+                                 ,|        .'  .'  .
+                             . ,' .       '  .'    :
+                          ,-' `    ' ,   '  '      :
+                        ,'          ',  '  '       :
+                      ,'_   ___   .  , .  '        :
+                      .' .,'   ` /:  /   .         :
+                      `--   -.  ' : / .            ;
+                       |6)  6)   C),    .         ;
+                       ; .,     .,'   :.         .
+                       `. o     :     :.        ;
+                         `-..'  :._   :|       '
+                           ,'  /_  `. :|     .'
+                          '.__/  `.  .:|  _.'
+                          : .'    |   .:-'
+                        .'|/     /     `.
+                       ,  /    ,'         `.
+                      / ,'   ,'"--.._        `.
+                     / /   ,'        `-.       `.
+                   .' /  ,'""""""'---.._j        `.
+                  ,'.' ,'                '-.       .
+                .' '  /  ,--.._             `.     :
+               / ,' .'  /      `-.._         |     ;
+            _.' .  /   /            `"--...._L__.-'
+          .' .-' ,'  ,'
+          ||'   /  ,'
+          ||| ,'  .
+          |||/  ,'
+        ,'.'  ,'
+       / '  ,'
+     .' '  .
+    ,  '   |
+   /  /    |
+  '  /  _..'
+,'--; ,'
+   `-' mh
+    """
+    if 1 <= guesses <= 5:
+        return one_to_five
+    elif 6 <= guesses <= 10:
+        return six_to_ten
+    else:
+        return eleven_to_fifteen
 
 
 # STEP 2 - Create interaction with player
@@ -187,10 +266,12 @@ username = input()
 # 2
 print("Hello " + username + "! These are the RULES of the game:")
 print('')
-print("1 - You get a maximum of 40 balls in your attempt to fill the board")
-print("2 - To continue rolling you need to type 'ROLL'")
-print("3 - If you want to stop before your 40 attempts finish, just type 'QUIT'")
-print("4 - Your reward will depend on how many names you have eliminated from your board")
+print("1 - You get a maximum of 40 balls in your attempt to eliminate all faeries from the board.")
+print("""2 - To continue rolling you need to type 'ROLL': If the ball is not a match to your board, 
+    nothing will happen. If if is, your updated board will be printed.""")
+print("3 - If you want to stop before you have finished your 40 attempts, just type 'QUIT'.")
+print("4 - Your reward will depend on how many faeries you have eliminated from your board.")
+print("5 - Have lots of fun!")
 print('')
 print("Type 'OK' to get started...")
 start = input().upper()
@@ -222,14 +303,31 @@ while count < 40 and play != 'QUIT':
     print(new_ball)
     new_board.__set__(new_ball.letter, new_ball.name)
     print("You have", 40 - count, "attempts left.")
-    print("Type 'ROLL' to get another Faery Ball.  >>> or Type 'QUIT' to exit and claim reward:")
+    print("Type 'ROLL' to get another Faery Ball OR type 'QUIT' to exit and claim reward:")
     play = input().upper()
     count += 1
 # 7
 if count == 40:
     print("You ran out of attempts, here are the results:")
-print(new_board)
-final_board = new_board.store_values()
-print(final_board)
-eliminated = calculate_guesses(final_board)
-print("You just rolled", count, "times and guessed", eliminated, "out of 15")
+    print(new_board)
+    final_board = new_board.store_values()
+    #print(final_board)
+    eliminated = calculate_guesses(final_board)
+    print("You just rolled", count, "times and guessed", eliminated, "out of 15")
+    prize = assign_prize(eliminated)
+    print('')
+    print("HERE IS YOUR PRIZE:")
+    print(prize)
+    print("THANK YOU FOR PLAYING <3")
+if count < 40:
+    print("You have quit the game, here are the results:")
+    print(new_board)
+    final_board = new_board.store_values()
+    #print(final_board)
+    eliminated = calculate_guesses(final_board)
+    print("You just rolled", count, "times and had", eliminated, "matches out of 15")
+    prize = assign_prize(eliminated)
+    print('')
+    print("HERE IS YOUR PRIZE:")
+    print(prize)
+    print("THANK YOU FOR PLAYING <3")
